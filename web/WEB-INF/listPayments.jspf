@@ -1,0 +1,26 @@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Payment ID</th>
+            <th>Member ID</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+    <h4>Payments: </h4>
+    <c:forEach items="${listPayments}" var="payment">
+        <tr>
+            <td><c:out value="${payment.ID}" /></td>
+        <td><c:out value="${payment.memberID}" /></td>
+        <td><c:out value="${payment.type}" /></td>
+        <td>£<c:out value="${payment.amount}" /></td>
+        <td><c:out value="${payment.date}" /></td>
+        <td><c:out value="${payment.timestamp}" /></td>
+        </tr>
+    </c:forEach>
+</tbody>
+</table>

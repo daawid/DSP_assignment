@@ -1,0 +1,35 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Date of Birth</th>
+            <th>Date of Registration</th>
+            <th>Status</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${listSuspendedMembers}" var="member">
+        <tr>
+
+            <td><c:out value="${member.username}" /></td>
+        <td><c:out value="${member.firstName}"/> <c:out value="${member.lastName}"/> </td>
+        <td><c:out value="${member.address}" /></td>
+        <td><c:out value="${member.dob}" /></td>
+        <td><c:out value="${member.dor}" /></td>
+        <td><c:out value="${member.status}" /></td>
+        <td>£<c:out value="${member.balance}" /></td>
+        <c:if test="${member.balance eq 0}">
+            <td>
+                <form action = "admin-dashboard" method = "POST">
+                    <input type="hidden" name="approveMember" value="${member.username}" /> 
+                    <button name="function" value="approveMember" type="submit" class="btn btn-success">Approve</button>
+                </form>
+            </td>
+        </c:if>
+        </tr>
+    </c:forEach>
+</tbody>
+</table>

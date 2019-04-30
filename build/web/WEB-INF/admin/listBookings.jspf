@@ -1,0 +1,53 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>Member ID</th>
+            <th>Date of travel</th>
+            <th>Status</th>
+            <th>Price</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Distance</th>
+            <th>Reference</th>
+        </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${listBookings}" var="booking">
+        <tr>
+            <td><c:out value="${booking.ID}" /></td>
+        <td><c:out value="${booking.memberID}" /></td>
+        <td><c:out value="${booking.dateOfTravel}" /></td>
+        <td><c:out value="${booking.status}" /></td>
+        <td>£<c:out value="${booking.price}" /></td>
+        <td><c:out value="${booking.origin}" /></td>
+        <td><c:out value="${booking.destination}" /></td>
+        <td><c:out value="${booking.distance}" /> miles</td>
+        <td><c:out value="${booking.reference}" /></td>
+        <c:if test="${booking.status == 'Submitted'}">
+            <td>
+
+                <form action = "admin-dashboard" method = "POST">
+                    <input type="hidden" name="approveBooking" value="${booking.ID}"/>
+                    <input type="hidden" name="approveBookingMember" value="${booking.memberID}"/>
+                    <input type="hidden" name="approveBookingOrigin" value="${booking.origin}"/>
+                    <input type="hidden" name="approveBookingDestination" value="${booking.destination}"/>
+                    <input type="hidden" name="approveBookingDot" value="${booking.date}"/>
+                    <input type="hidden" name="approveBookingReference" value="${booking.reference}"/>
+                    <button name="function" value="approveBooking" type="submit" class="btn btn-success">Approve</button>
+                </form>
+            </td>
+            <td>
+                <form action = "admin-dashboard" method = "POST">
+                    <input type="hidden" name="rejectBooking" value="${booking.ID}"/>
+                    <input type="hidden" name="rejectBookingMember" value="${booking.memberID}"/>
+                    <input type="hidden" name="rejectBookingOrigin" value="${booking.origin}"/>
+                    <input type="hidden" name="rejectBookingDestination" value="${booking.destination}"/>
+                    <input type="hidden" name="rejectBookingReference" value="${booking.reference}"/>
+                    <button name="function" value="rejectBooking" type="submit" class="btn btn-danger">Reject</button>
+                </form>
+            </td>
+        </c:if>
+    </c:forEach>
+</tbody>
+</table>

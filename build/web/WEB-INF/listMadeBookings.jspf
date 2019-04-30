@@ -1,0 +1,89 @@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>Member ID</th>
+            <th>Date of booking</th>
+            <th>Date of travel</th>
+            <th>Status</th>
+            <th>Price</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Distance</th>
+            <th>Passengers</th>
+            <th>Reference</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    <h4>Unprocessed bookings: </h4>
+    <c:forEach items="${listMadeBookings}" var="booking">
+        <c:if test="${booking.status == 'Submitted'}">
+            <tr>
+                <td><c:out value="${booking.ID}" /></td>
+            <td><c:out value="${booking.memberID}" /></td>
+            <td><c:out value="${booking.date}" /></td>
+            <td><c:out value="${booking.dateOfTravel}" /></td>
+            <td><c:out value="${booking.status}" /></td>
+            <td>£<c:out value="${booking.price}" /></td>
+            <td><c:out value="${booking.origin}" /></td>
+            <td><c:out value="${booking.destination}" /></td>
+            <td><c:out value="${booking.distance}" /> miles</td>
+            <td><c:out value="${booking.passengers}" /></td>
+            <td><c:out value="${booking.reference}" /></td>
+            <td>
+                <form action = "member-dashboard" method = "POST">
+                    <input type="hidden" name="editBookingID" value="${booking.ID}"/>
+                    <input type="hidden" name="editBookingDot" value="${booking.dateOfTravel}"/>
+                    <input type="hidden" name="editBookingMemberID" value="${booking.memberID}"/>
+                    <input type="hidden" name="editBookingPassengers" value="${booking.passengers}"/>
+                    <input type="hidden" name="editBookingReference" value="${booking.reference}"/>
+                    <button name="function" value="editBooking" type="submit" class="btn btn-primary">Edit</button>
+                </form>
+            </td>
+            </tr>
+        </c:if>
+    </c:forEach>
+</tbody>
+</table>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>Member ID</th>
+            <th>Date of booking</th>
+            <th>Status</th>
+            <th>Price</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Distance</th>
+            <th>Passengers</th>
+            <th>Date of travel</th>
+            <th>Reference</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    <h4>Processed bookings: </h4>
+    <c:forEach items="${listMadeBookings}" var="booking">
+        <c:if test="${booking.status ne 'Submitted'}">
+            <tr>
+                <td><c:out value="${booking.ID}" /></td>
+            <td><c:out value="${booking.memberID}" /></td>
+            <td><c:out value="${booking.date}" /></td>
+            <td><c:out value="${booking.status}" /></td>
+            <td>£<c:out value="${booking.price}" /></td>
+            <td><c:out value="${booking.origin}" /></td>
+            <td><c:out value="${booking.destination}" /></td>
+            <td><c:out value="${booking.distance}" />  miles</td>
+            <td><c:out value="${booking.passengers}" /></td>
+            <td><c:out value="${booking.dateOfTravel}" /></td>
+            <td><c:out value="${booking.reference}" /></td>
+            </tr>
+        </c:if>
+    </c:forEach>
+</tbody>
+</table>

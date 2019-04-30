@@ -1,0 +1,39 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/distanceController.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrbAg-YJZV5Jpgji7A023rvOH_I234scA"></script>
+
+<center>
+
+    <div class="container">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
+            <fieldset>
+                <body ng-app="distance" ng-controller="distanceController" ng-cloak>
+                    <form name="distanceForm" ng-submit="distanceForm.$valid && calcDistance(origin, destination)">
+                        <div class="form-group">
+                            <label for="origin" class="sr-only">Origin</label>
+                            <input type="text" name="origin" required class="form-control input-lg" ng-minlength="1" placeholder="Origin" ng-model="origin">
+                            <label for="destination" class="sr-only">Destination</label>
+                            <input type="text" name="destination" required class="form-control input-lg" ng-minlength="1" placeholder="Destination" ng-model="destination"> 
+                        </div>
+                        <button type="submit" class="btn btn-primary">Calculate Distance</button>
+                        <input type="text" name="displayDistance" placeholder="Miles" value="{{distanceText}}" disabled>
+                    </form>
+                </body>
+                <form role="form" action="member-dashboard" method="POST" class="f1">
+                    <label for="origin" class="sr-only">Origin</label>
+                    <input type="hidden" name="origin" class="form-control" placeholder="Origin" value="{{origin}}" required autofocus><br>
+                    <label for="destination" class="sr-only">Destination</label>
+                    <input type="hidden" name="destination" class="form-control" placeholder="Destination" value="{{destination}}" required autofocus><br>        
+                    <label for="date" class="sr-only">Date of travel</label>
+                    <input type="date" name="date" class="form-control" placeholder="Date of travel" required autofocus><br>
+                    <label for="passengers" class="sr-only">Number of passengers</label>
+                    <input type="number" name="passengers" class="form-control" placeholder="Number of passengers" required autofocus min="1"><br>
+                    <input type="hidden" name="distance" value="{{distanceText}}">
+
+                    <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                        <button name="function" value="makeABooking" type="submit" class="btn btn-primary">Create booking</button>
+                        </fieldset>
+                </form>
+        </div>
+</center>

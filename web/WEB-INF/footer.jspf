@@ -1,0 +1,57 @@
+<%-- 
+    Document   : footer
+    Created on : 26-Feb-2018, 17:38:55
+    Author     : dawid
+--%>
+
+
+
+<!--Footer-->
+      <footer class="page-footer font-small blue pt-4 mt-4">
+      
+          <!--Footer Links-->
+          <div class="container-fluid text-center text-md-left">
+              <div class="row">
+      
+                  <!--First column-->
+                  <div class="col-md-6">
+                      <h5 class="text-uppercase">Footer Content</h5>
+                      <p>Here you can use rows and columns here to organize your footer content.</p>
+                  </div>
+                  <!--/.First column-->
+      
+                  <!--Second column-->
+                  <div class="col-md-6">
+                      <h5 class="text-uppercase">Links</h5>
+                      <ul class="list-unstyled">
+                          <li><a href="#!">Link 1</a></li>
+                          <li><a href="#!">Link 2</a></li>
+                          <li><a href="#!">Link 3</a></li>
+                          <li><a href="#!">Link 4</a></li>
+                      </ul>
+                  </div>
+                  <!--/.Second column-->
+              </div>
+          </div>
+          <!--/.Footer Links-->
+      
+          <!--Copyright-->
+          <div class="footer-copyright py-3 text-center">
+              <div class="container-fluid">
+                  © 2015 Copyright: <a href="https://mdbootstrap.com/material-design-for-bootstrap/"> MDBootstrap.com </a>
+      
+              </div>
+          </div>
+          <!--/.Copyright-->
+      
+      </footer>
+      <!--/.Footer-->
+      
+              <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/retina-1.1.0.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+    </body>
+</html>

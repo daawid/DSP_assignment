@@ -1,0 +1,46 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Date of Registration</th>
+            <th>Status</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${listMembers}" var="member">
+        <tr>
+        <td><c:out value="${member.username}" /></td>
+        <td><c:out value="${member.firstName}" /></td>
+        <td><c:out value="${member.lastName}" /></td>
+        <td><c:out value="${member.address}" /></td>
+        <td><c:out value="${member.email}" /></td>
+        <td><c:out value="${member.dob}" /></td>
+        <td><c:out value="${member.dor}" /></td>
+        <td><c:out value="${member.status}" /></td>
+        <td>£<c:out value="${member.balance}" /></td>
+        <c:if test="${(member.balance > 0) && (member.status != 'Suspended')}">
+            <td>
+                <form action = "admin-dashboard" method = "POST">
+                    <input type="hidden" name="suspendMembership" value="${member.username}" /> 
+                    <button name="function" value="suspendMembership" type="submit" class="btn btn-danger">Suspend</button>
+                </form>
+            </td>
+        </c:if>
+        <c:if test="${(member.balance == 0) && (member.status eq 'Suspended')}">
+            <td>              
+                <form action = "admin-dashboard" method = "POST">
+                    <input type="hidden" name="resumeMembership" value="${member.username}" /> 
+                    <button name="function" value="resumeMembership" type="submit" class="btn btn-success">Approve</button>
+                </form>
+            </td>
+        </c:if>
+        </tr>
+    </c:forEach>
+</tbody>
+</table>

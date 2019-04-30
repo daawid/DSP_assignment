@@ -1,0 +1,16 @@
+<center><h4>Outstanding balance £<c:out value="${outstandingPayments}"/>0</h4></center><br><br>
+
+<center>
+    <div class="container">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
+            <fieldset>
+                <form role="form" action="member-dashboard" method="POST" class="f1">
+                    <label for="paymentAmount" class="sr-only">Payment amount</label>
+                    <input type="text" name="paymentAmount" class="form-control" placeholder="Payment amount" required autofocus>
+
+                    <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                        <button name="function" value="makePayment" type="submit" class="btn btn-primary">Make payment</button>
+                        </fieldset>
+                </form>
+        </div>
+</center>

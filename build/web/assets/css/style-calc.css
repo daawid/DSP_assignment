@@ -1,0 +1,119 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #F1f0f0;
+    font-size: 28px;
+    color: rgb(46, 46, 46);
+    text-align: center;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.fareBreakdownContainer {
+    font-size: 16px;
+}
+
+.fareBreakdownContainer tr td:first-child {
+    font-weight:bold;
+    width: 50%;
+}
+
+.fareBreakdownContainer tr {
+    border-bottom: 1.2px solid #EFA424;
+}
+
+.fareBreakdownContainer td {
+    padding: 5px;
+}
+
+.fareBreakdownContainer p {
+    line-height: 4px;
+}
+
+.fare-lightTraffic {
+    color: #957844;
+}
+
+.fare-heavyTraffic {
+    color: #b56356;
+}
+
+.fare-noTraffic { 
+    color: #58986f;
+}
+
+.container {
+    margin: 0 auto;
+    height: 100%;
+    width: 60%;
+}
+
+svg:hover {
+    cursor: pointer;
+    color: #b56356;
+}
+
+#map {
+    margin: 10px auto;
+    height: 50%;
+    width: 100%;
+}
+
+#buttonCalculateFare {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    background-color: #FCAD26;
+    font-size: 0.4em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 20px;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 6px #EFA424;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+#buttonCalculateFare:hover {
+    box-shadow: 0 4px #EFA424;
+    top: 2px;
+}
+
+#buttonCalculateFare:active {
+    box-shadow: 0 -1px #EFA424;
+    top: 6px;
+}
+
+.wrapperAddressInputs {
+    width: 100%;
+    text-align: left;
+}
+
+input,
+select {
+    height: 45px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid #636161;
+    padding: 5px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 18px;
+    box-sizing: border-box;
+}
+
+label {
+    font-size: 18px;
+    text-align: left;
+}

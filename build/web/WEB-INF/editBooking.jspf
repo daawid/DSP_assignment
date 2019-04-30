@@ -1,0 +1,70 @@
+<center>   
+    <div class="container">    
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+                <div class="panel-heading">
+
+
+                    <h4><div class="panel-title">Edit booking</div></h4>
+                </div>     
+                <c:if test="${!empty SUCCESS_MSG}">
+                    <div id="signupalert" style="" class="alert alert-success">
+                        <c:out value="${SUCCESS_MSG}"/>
+                    </div>
+                </c:if>
+
+                <div style="padding-top:30px" class="panel-body" >
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                    <form id="loginform" class="form-horizontal" role="form" action="member-dashboard" method="POST"> 
+
+                        <c:if test="${!empty ERR_MSG}">
+                            <div id="signupalert" style="" class="alert alert-danger">
+                                <c:out value="${ERR_MSG}"/>
+                            </div>
+                        </c:if>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <label for="bookingID">Booking ID</label><br>
+                            <input id="login-username" type="number" class="form-control" name="bookingID" value="${bookingID}" placeholder="Booking ID"  disabled>    
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <label for="reference">Booking reference</label><br>
+                            <input id="login-username" type="text" class="form-control" name="reference" value="${reference}" placeholder="Booking reference"  disabled>    
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <label for="memberID">Email</label><br>
+                            <input id="login-password" type="text" class="form-control" name="memberID" value="${memberID}" placeholder="Email"  disabled>
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <label for="dot">Date of travel</label><br>
+                            <input id="login-password" type="date" class="form-control" name="dot" value="${dot}" placeholder="Date of travel">
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <label for="passengers">Passengers</label><br>
+                            <input id="login-password" type="number" class="form-control" name="passengers" value="${passengers}" placeholder="Passengers" min="1">
+                        </div>
+
+                        <div style="margin-top:10px" class="form-group">
+                            <!-- Button -->
+
+                            <div class="col-sm-12 controls">
+                                <button name="function" value="editABooking" type="submit" class="btn btn-success">Edit booking</button>
+                            </div>
+                        </div>
+                    </form>     
+                </div>                     
+            </div>  
+        </div>
+    </div> 
+</div>
+</center>
