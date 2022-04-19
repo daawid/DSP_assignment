@@ -45,7 +45,7 @@ public class Email {
 
     public static void details(String receiver, String title, String content) {
         final String fromEmail = "travelapp9@gmail.com"; //requires valid gmail id
-        final String password = "dbgtzdbgtz1"; // correct password for gmail id
+        final String password = "asd"; // correct password for gmail id
         final String toEmail = receiver; // can be any email id 
 
         System.out.println("TLSEmail Start");
